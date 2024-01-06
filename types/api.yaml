@@ -1,50 +1,31 @@
 # API specific types
 
-DepositSnapshotResponse:
-  type: object
-  properties:
-    finalized:
-      type: array
-      items:
-        allOf:
-          - $ref: './primitive.yaml#/Root'
-      minItems: 3
-      maxItems: 3
-    deposit_root:
-      $ref: './primitive.yaml#/Root'
-    deposit_count:
-      $ref: './primitive.yaml#/Uint64'
-    execution_block_hash:
-      $ref: './primitive.yaml#/Root'
-    execution_block_height:
-      $ref: './primitive.yaml#/Uint64'
-
 ValidatorResponse:
   type: object
   properties:
     index:
       allOf:
-        - $ref: './primitive.yaml#/Uint64'
+        - $ref: './spec.yaml#/phase0/ValidatorIndex'
         - description: "Index of validator in validator registry."
     balance:
       allOf:
-        - $ref: "./primitive.yaml#/Gwei"
+        - $ref: "./spec.yaml#/phase0/Gwei"
         - description: "Current validator balance in gwei."
     status:
       $ref: "#/ValidatorStatus"
     validator:
-      $ref: "./validator.yaml#/Validator"
+      $ref: "./spec.yaml#/phase0/Validator"
 
 ValidatorBalanceResponse:
   type: object
   properties:
     index:
       allOf:
-        - $ref: './primitive.yaml#/Uint64'
+        - $ref: './spec.yaml#/phase0/ValidatorIndex'
         - description: "Index of validator in validator registry."
     balance:
       allOf:
-        - $ref: "./primitive.yaml#/Gwei"
+        - $ref: "./spec.yaml#/phase0/Gwei"
         - description: "Current validator balance in gwei."
 
 ValidatorStatus:
@@ -63,24 +44,6 @@ ValidatorStatus:
     [Validator status specification](https://hackmd.io/ofFJ5gOmQpu1jjHilHbdQQ)
   enum: ["pending_initialized", "pending_queued", "active_ongoing", "active_exiting", "active_slashed", "exited_unslashed", "exited_slashed", "withdrawal_possible", "withdrawal_done"]
   example: "active_ongoing"
-
-
-Committee:
-  description: Group of validators assigned to attest at specific slot and that have the same committee index (shard in phase 1)
-  type: object
-  properties:
-    index:
-      allOf:
-        - $ref: './primitive.yaml#/Uint64'
-        - description: Committee index at a slot
-    slot:
-      $ref: './primitive.yaml#/Uint64'
-
-    validators:
-      type: array
-      description: "List of validator indices assigned to this committee"
-      items:
-        $ref: './primitive.yaml#/Uint64'
 
 BroadcastValidation:
   description: Level of validation that must be applied to a block before it is broadcast.

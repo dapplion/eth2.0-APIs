@@ -216,7 +216,7 @@ components:
     BroadcastValidation:
       $ref: './types/api.yaml#/BroadcastValidation'
     DepositSnapshotResponse:
-      $ref: './types/api.yaml#/DepositSnapshotResponse'
+      $ref: './types/spec.yaml#/phase0/DepositSnapshotResponse'
     SignedBeaconBlock:
       $ref: './types/spec.yaml#/phase0/SignedBeaconBlock'
     SignedBeaconBlockHeader:
@@ -228,7 +228,7 @@ components:
     ValidatorStatus:
       $ref: './types/api.yaml#/ValidatorStatus'
     Committee:
-      $ref: './types/api.yaml#/Committee'
+      $ref: './types/spec.yaml#/phase0/Committee'
     AttesterSlashing:
       $ref: './types/spec.yaml#/phase0/AttesterSlashing'
     ProposerSlashing:
@@ -238,11 +238,11 @@ components:
     SignedBLSToExecutionChange:
       $ref: './types/spec.yaml#/capella/SignedBLSToExecutionChange'
     AttesterDuty:
-      $ref: './types/validator.yaml#/AttesterDuty'
+      $ref: './types/spec.yaml#/phase0/AttesterDuty'
     ProposerDuty:
-      $ref: './types/validator.yaml#/ProposerDuty'
+      $ref: './types/spec.yaml#/phase0/ProposerDuty'
     Altair.SyncDuty:
-      $ref: './types/validator.yaml#/Altair/SyncDuty'
+      $ref: './types/spec.yaml#/altair/SyncDuty'
     SignedAggregateAndProof:
       $ref: './types/spec.yaml#/phase0/SignedAggregateAndProof'
     Attestation:
@@ -250,15 +250,15 @@ components:
     AttestationData:
       $ref: './types/spec.yaml#/phase0/AttestationData'
     BeaconCommitteeSelection:
-      $ref: './types/selection.yaml#/BeaconCommitteeSelection'
+      $ref: './types/spec.yaml#/phase0/BeaconCommitteeSelection'
     SyncCommitteeSelection:
-      $ref: './types/selection.yaml#/SyncCommitteeSelection'
+      $ref: './types/spec.yaml#/altair/SyncCommitteeSelection'
     Fork:
       $ref: './types/spec.yaml#/phase0/Fork'
     Checkpoint:
       $ref: './types/spec.yaml#/phase0/Checkpoint'
     Uint64:
-      $ref: './types/primitive.yaml#/Uint64'
+      $ref: './types/spec.yaml#/primitive/uint64'
     NetworkIdentity:
       $ref: './types/p2p.yaml#/NetworkIdentity'
     Peer:
@@ -269,12 +269,10 @@ components:
       $ref: './types/p2p.yaml#/PeerConnectionState'
     PeerConnectionDirection:
       $ref: './types/p2p.yaml#/PeerConnectionDirection'
-    GenesisTime:
-      $ref: './types/primitive.yaml#/GenesisTime'
+    Genesis:
+      $ref: './types/spec.yaml#/phase0/Genesis'
     Version:
       $ref: './types/spec.yaml#/phase0/Version'
-    ForkVersion:
-      $ref: './types/primitive.yaml#/ForkVersion'
     DependentRoot:
       $ref: './types/primitive.yaml#/DependentRoot'
     ExecutionOptimistic:
@@ -308,17 +306,17 @@ components:
     Altair.BeaconState:
       $ref: './types/spec.yaml#/altair/BeaconState'
     Altair.SyncCommitteeSignature:
-      $ref: './types/altair.yaml#/Altair/SyncCommitteeSignature'
+      $ref: './types/spec.yaml#/altair/SyncCommitteeSignature'
     Altair.SyncCommitteeSubscription:
-      $ref: './types/altair.yaml#/Altair/SyncCommitteeSubscription'
+      $ref: './types/spec.yaml#/altair/SyncCommitteeSubscription'
     Altair.ContributionAndProof:
       $ref: './types/spec.yaml#/altair/ContributionAndProof'
     Altair.SignedContributionAndProof:
       $ref: './types/spec.yaml#/altair/SignedContributionAndProof'
     Altair.SyncCommitteeContribution:
       $ref: './types/spec.yaml#/altair/SyncCommitteeContribution'
-    Altair.SyncCommittee:
-      $ref: './types/altair.yaml#/Altair/SyncCommitteeByValidatorIndices'
+    Altair.IndexedSyncCommittee:
+      $ref: './types/spec.yaml#/altair/IndexedSyncCommittee'
     ExecutionAddress:
       $ref: './types/spec.yaml#/bellatrix/ExecutionAddress'
     Bellatrix.BeaconState:
@@ -336,7 +334,7 @@ components:
       enum: [phase0, altair, bellatrix, capella, deneb]
       example: "phase0"
     SignedValidatorRegistration:
-      $ref: './types/registration.yaml#/SignedValidatorRegistration'
+      $ref: './types/spec.yaml#/bellatrix/SignedValidatorRegistration'
     Capella.BeaconState:
       $ref: './types/spec.yaml#/capella/BeaconState'
     Capella.BeaconBlock:
@@ -362,11 +360,11 @@ components:
     Deneb.BeaconBlock:
       $ref: './types/spec.yaml#/deneb/BeaconBlock'
     Deneb.BlockContents:
-      $ref: './types/deneb.yaml#/Deneb/BlockContents'
+      $ref: './types/spec.yaml#/deneb/BlockContents'
     Deneb.SignedBeaconBlock:
       $ref: './types/spec.yaml#/deneb/SignedBeaconBlock'
     Deneb.SignedBlockContents:
-      $ref: './types/deneb.yaml#/Deneb/SignedBlockContents'
+      $ref: './types/spec.yaml#/deneb/SignedBlockContents'
     Deneb.BlindedBeaconBlock:
       $ref: './types/spec.yaml#/deneb/BlindedBeaconBlock'
     Deneb.SignedBlindedBeaconBlock:
@@ -374,7 +372,7 @@ components:
     Blob:
       $ref: './types/spec.yaml#/deneb/Blob'
     Deneb.BlobSidecars:
-      $ref: './types/deneb.yaml#/Deneb/BlobSidecars'
+      $ref: './types/spec.yaml#/deneb/BlobSidecars'
     Node:
       $ref: './types/fork_choice.yaml#/Node'
     ExtraData:

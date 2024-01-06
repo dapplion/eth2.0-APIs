@@ -31,7 +31,7 @@ get:
               finalized:
                 $ref: "../../../beacon-node-oapi.yaml#/components/schemas/Finalized"
               data:
-                $ref: '../../../beacon-node-oapi.yaml#/components/schemas/Altair.SyncCommittee'
+                $ref: '../../../beacon-node-oapi.yaml#/components/schemas/Altair.IndexedSyncCommittee'
 
     "400":
       description: "Invalid state ID or epoch"

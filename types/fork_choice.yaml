@@ -4,22 +4,22 @@ Node:
   properties:
     slot:
       allOf:
-        - $ref: './primitive.yaml#/Uint64'
+        - $ref: './spec.yaml#/primitive/uint64'
         - description: "The slot to which this block corresponds."
     block_root:
       allOf:
-        - $ref: './primitive.yaml#/Root'
+        - $ref: './spec.yaml#/phase0/Root'
         - description: "The signing merkle root of the `BeaconBlock`."
     parent_root:
       allOf:
-        - $ref: './primitive.yaml#/Root'
+        - $ref: './spec.yaml#/phase0/Root'
         - description: "The signing merkle root of the parent `BeaconBlock`."
     justified_epoch:
-      $ref: './primitive.yaml#/Uint64'
+      $ref: './spec.yaml#/primitive/uint64'
     finalized_epoch:
-      $ref: './primitive.yaml#/Uint64'
+      $ref: './spec.yaml#/primitive/uint64'
     weight:
-      $ref: './primitive.yaml#/Uint64'
+      $ref: './spec.yaml#/primitive/uint64'
     validity:
       type: string
       enum: [valid, invalid, optimistic]
