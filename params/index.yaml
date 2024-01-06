@@ -23,7 +23,7 @@ BlockRoot:
   name: block_root
   in: path
   schema:
-    $ref: "../types/primitive.yaml#/Root"
+    $ref: "../types/spec.yaml#/phase0/Root"
   description: |
     Block root.
     \<hex encoded blockRoot with 0x prefix\>.
